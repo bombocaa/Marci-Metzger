@@ -22,9 +22,6 @@ export default function SearchSection() {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
-          <p className="text-[10px] tracking-[0.35em] uppercase text-[#FAF7F2]/60 mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Explore Southern Nevada
-          </p>
           <h2 className="text-4xl md:text-6xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Find Your Dream Home
           </h2>

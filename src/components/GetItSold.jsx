@@ -23,11 +23,8 @@ export default function GetItSold() {
             />
           </div>
           <div className="md:col-span-5 flex flex-col justify-center">
-            <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Top Residential Sales · Last 5 Years
-            </p>
             <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Proven results across Southern Nevada
+              Top Residential Sales · Last 5 Years
             </h3>
             <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
               In 2021 alone, we helped nearly 90 families — closing $28.5 million in sales. Not because of luck, but because we outwork, outmarket, and outlast the competition on every single listing.
@@ -38,11 +35,8 @@ export default function GetItSold() {
         {/* 2. Modern Interior */}
         <div className="grid md:grid-cols-12 gap-8 mb-16 items-center">
           <div className="md:col-span-5 flex flex-col justify-center order-last md:order-first">
-            <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Tailored Marketing Strategy
-            </p>
             <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Don't just list it —<br />get it <em>sold.</em>
+              Don't just list it —
             </h3>
             <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
               Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.
@@ -67,11 +61,8 @@ export default function GetItSold() {
             />
           </div>
           <div className="md:col-span-5 flex flex-col justify-center">
-            <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Guide to Buyers
-            </p>
             <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
-              From first showing to <em>handing over keys.</em>
+              Guide to Buyers
             </h3>
             <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
               Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, & more!

@@ -54,7 +54,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-14 flex gap-5">
-              {["Facebook", "Instagram", "LinkedIn"].map((label) => (
+              {["Facebook", "Instagram", "LinkedIn", "Yelp"].map((label) => (
                 <a key={label} href="#" aria-label={label}
                   className="text-[10px] tracking-widest uppercase text-[#8A8075] hover:text-[#24211E] transition-colors"
                   style={{ fontFamily: "'Inter', sans-serif" }}
