@@ -4,7 +4,6 @@ import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import AgentProfile from "./components/AgentProfile";
 import GetItSold from "./components/GetItSold";
-import SearchSection from "./components/SearchSection";
 import Affiliations from "./components/Affiliations";
 import Gallery from "./components/Gallery";
 import Services from "./components/Services";
@@ -19,7 +18,6 @@ export default function App() {
         <Marquee />
         <AgentProfile />
         <GetItSold />
-        <SearchSection />
         <Affiliations />
         <Gallery />
         <Services />

@@ -5,7 +5,7 @@ import { IMGS } from "../data/constants";
 
 export default function SearchSection() {
   return (
-    <section id="search" className="relative py-20 sm:py-24 md:py-28 px-8 md:px-16 min-h-[480px] md:min-h-[540px] flex items-center justify-center overflow-hidden border-t border-b border-[#E2DAD0]">
+    <section id="search" className="relative py-14 sm:py-16 md:py-20 px-6 md:px-10 lg:px-12 min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden border-t border-b border-[#E2DAD0]">
       {/* Full Background Image */}
       <img
         src={IMGS.searchBg}
@@ -28,9 +28,9 @@ export default function SearchSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-8"
+          className="text-center mb-6 sm:mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Find Your Dream Home
           </h2>
         </motion.div>
@@ -41,9 +41,9 @@ export default function SearchSection() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.85, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
-          className="bg-[#FAF7F2]/10 backdrop-blur-md p-8 sm:p-10 rounded-xs shadow-2xl"
+          className="bg-[#FAF7F2]/10 backdrop-blur-md p-6 sm:p-8 rounded-xs shadow-xl"
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 mb-6">
             {[
               { label: "Location", options: ["Any", "Pahrump", "Las Vegas", "Henderson"] },
               { label: "Type", options: ["Any", "Single Family", "Condo", "Land", "Commercial"] },
@@ -52,14 +52,14 @@ export default function SearchSection() {
               { label: "Baths", options: ["Any", "1+", "2+", "3+"] },
             ].map(({ label, options }) => (
               <div key={label}>
-                <label htmlFor={`filter-${label}`} className="block text-[9px] tracking-[0.25em] uppercase text-[#FAF7F2]/70 mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <label htmlFor={`filter-${label}`} className="block text-[8.5px] sm:text-[9px] tracking-[0.22em] uppercase text-[#FAF7F2]/70 mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {label}
                 </label>
                 <div className="relative flex items-center">
                   <select
                     id={`filter-${label}`}
                     aria-label={`Filter by ${label}`}
-                    className="w-full border-b border-[#FAF7F2]/30 pb-2 pr-6 text-sm text-[#FAF7F2] bg-transparent focus:outline-none focus:border-[#FAF7F2] appearance-none cursor-pointer"
+                    className="w-full border-b border-[#FAF7F2]/30 pb-1.5 pr-5 text-xs sm:text-sm text-[#FAF7F2] bg-transparent focus:outline-none focus:border-[#FAF7F2] appearance-none cursor-pointer"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {options.map((o) => (
@@ -73,13 +73,13 @@ export default function SearchSection() {
               </div>
             ))}
             <div>
-              <label className="block text-[9px] tracking-[0.25em] uppercase text-[#FAF7F2]/70 mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <label className="block text-[8.5px] sm:text-[9px] tracking-[0.22em] uppercase text-[#FAF7F2]/70 mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Price Range
               </label>
               <input
                 type="text"
                 placeholder="Max $"
-                className="w-full border-b border-[#FAF7F2]/30 pb-2 text-sm text-[#FAF7F2] bg-transparent focus:outline-none placeholder-[#FAF7F2]/40"
+                className="w-full border-b border-[#FAF7F2]/30 pb-1.5 text-xs sm:text-sm text-[#FAF7F2] bg-transparent focus:outline-none placeholder-[#FAF7F2]/40"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               />
             </div>
@@ -87,7 +87,7 @@ export default function SearchSection() {
 
           <div className="flex justify-center md:justify-start">
             <button
-              className="px-12 py-4 text-[10px] tracking-[0.25em] uppercase text-[#24211E] bg-[#FAF7F2] hover:bg-[#EBE5DF] font-semibold transition-colors cursor-pointer"
+              className="px-8 py-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-[#24211E] bg-[#FAF7F2] hover:bg-[#EBE5DF] font-semibold transition-colors cursor-pointer"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Search Properties

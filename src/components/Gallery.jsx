@@ -61,7 +61,7 @@ export default function Gallery() {
   }, [selectedIdx, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section id="gallery" className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0] overflow-hidden">
+    <section id="gallery" className="bg-[#FAF7F2] py-16 md:py-20 px-6 md:px-10 lg:px-12 border-t border-[#E2DAD0] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -69,17 +69,17 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4"
         >
           <div>
-            <h2 className="text-4xl md:text-6xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
               Photo Gallery
             </h2>
           </div>
         </motion.div>
 
         {/* Gallery Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[240px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 auto-rows-[170px] sm:auto-rows-[190px] md:auto-rows-[210px]">
           {galleryImages.map((img, idx) => (
             <motion.div
               key={idx}

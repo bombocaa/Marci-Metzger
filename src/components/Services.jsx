@@ -27,7 +27,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-28 px-8 md:px-16 bg-[#FAF7F2] border-t border-[#E2DAD0] overflow-hidden">
+    <section id="services" className="py-16 md:py-20 px-6 md:px-10 lg:px-12 bg-[#FAF7F2] border-t border-[#E2DAD0] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -35,14 +35,14 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-16"
+          className="mb-10 md:mb-12"
         >
-          <h2 className="text-4xl md:text-6xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Our Services
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {items.map(({ src, alt, title, body }, i) => (
             <motion.div
               key={title}
@@ -50,9 +50,9 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, delay: i * 0.15, ease: "easeOut" }}
-              className={`group ${i === 1 ? "md:mt-12" : ""}`}
+              className={`group ${i === 1 ? "md:mt-6" : ""}`}
             >
-              <div className="overflow-hidden mb-7">
+              <div className="overflow-hidden mb-4 sm:mb-5">
                 <img
                   src={src}
                   alt={alt}
@@ -60,13 +60,13 @@ export default function Services() {
                 />
               </div>
               <h3
-                className="text-xl font-medium text-[#24211E] mb-3 leading-snug"
+                className="text-lg sm:text-xl font-medium text-[#24211E] mb-2 leading-snug"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {title}
               </h3>
               <p
-                className="text-[#5C544D] text-sm leading-[1.75]"
+                className="text-[#5C544D] text-xs sm:text-sm leading-[1.65]"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {body}

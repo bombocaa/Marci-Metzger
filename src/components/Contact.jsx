@@ -18,8 +18,8 @@ export default function Contact() {
 
   return (
     <section id="contact" className="overflow-hidden">
-      <div className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-start">
+      <div className="bg-[#FAF7F2] py-16 md:py-20 px-6 md:px-10 lg:px-12 border-t border-[#E2DAD0]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
 
           {/* Column 1: Send Message Form */}
           <motion.div
@@ -29,7 +29,7 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col"
           >
-            <h2 className="text-3xl sm:text-4xl font-medium text-[#24211E] leading-tight mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#24211E] leading-tight mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Let's Find<br />Your Next<br /><em>Home.</em>
             </h2>
 
@@ -53,7 +53,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
                 <div>
                   <label htmlFor="contact-name" className="sr-only">Full Name</label>
                   <input
@@ -64,7 +64,7 @@ export default function Contact() {
                     placeholder="Name *"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    className="w-full border-b border-[#E2DAD0] pb-2 text-xs sm:text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
                 </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                     placeholder="Email *"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    className="w-full border-b border-[#E2DAD0] pb-2 text-xs sm:text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                     placeholder="Phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    className="w-full border-b border-[#E2DAD0] pb-2 text-xs sm:text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
                 </div>
@@ -104,14 +104,14 @@ export default function Contact() {
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] resize-none focus:border-[#24211E] transition-colors"
+                    className="w-full border-b border-[#E2DAD0] pb-2 text-xs sm:text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] resize-none focus:border-[#24211E] transition-colors"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="self-start px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2] bg-[#24211E] hover:bg-[#3B3632] disabled:opacity-50 font-semibold transition-colors mt-2 cursor-pointer"
+                  className="self-start px-6 py-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2] bg-[#24211E] hover:bg-[#3B3632] disabled:opacity-50 font-semibold transition-colors mt-1.5 cursor-pointer"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {status === "submitting" ? "Sending..." : "Send Message"}
@@ -128,12 +128,12 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             className="flex flex-col pt-1"
           >
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <p className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
               Hours of Operation
             </p>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               {[["Monday – Friday", "9am – 5pm"], ["Saturday", "By Appointment"], ["Sunday", "Closed"]].map(([day, hours]) => (
-                <div key={day} className="flex justify-between text-sm py-2.5 border-b border-[#E2DAD0]">
+                <div key={day} className="flex justify-between text-xs sm:text-sm py-2 border-b border-[#E2DAD0]">
                   <span className="text-[#5C544D]" style={{ fontFamily: "'Inter', sans-serif" }}>{day}</span>
                   <span className="text-[#8A8075] font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>{hours}</span>
                 </div>
@@ -149,13 +149,13 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="flex flex-col pt-1"
           >
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <p className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
               Our Office
             </p>
-            <p className="text-2xl font-medium text-[#24211E] mb-0.5" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <p className="text-xl sm:text-2xl font-medium text-[#24211E] mb-0.5" style={{ fontFamily: "'Playfair Display', serif" }}>
               Marci Metzger
             </p>
-            <p className="text-xs tracking-widest uppercase text-[#8A8075] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <p className="text-[10px] sm:text-xs tracking-widest uppercase text-[#8A8075] mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
               The Ridge Realty Group
             </p>
             <a
@@ -166,13 +166,13 @@ export default function Contact() {
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               <span>3190 HW-160, Suite F, Pahrump, Nevada 89048</span>
-              <span className="inline-block text-[10px] tracking-widest uppercase text-[#8A8075] group-hover:text-[#24211E] ml-1.5 underline underline-offset-2">
+              <span className="inline-block text-[9px] sm:text-[10px] tracking-widest uppercase text-[#8A8075] group-hover:text-[#24211E] ml-1.5 underline underline-offset-2">
                 (Directions ↗)
               </span>
             </a>
 
             {/* Embedded Google Map */}
-            <div className="w-full h-[240px] sm:h-[260px] overflow-hidden border border-[#E2DAD0] shadow-xs relative bg-[#E5E3DF] mt-1">
+            <div className="w-full h-[200px] sm:h-[220px] md:h-[230px] overflow-hidden border border-[#E2DAD0] shadow-xs relative bg-[#E5E3DF] mt-1">
               <iframe
                 title="Marci Metzger - 3190 HW-160, Suite F, Pahrump, NV 89048"
                 src="https://maps.google.com/maps?q=36.184431,-115.955683&hl=en&z=15&output=embed"
@@ -191,20 +191,20 @@ export default function Contact() {
       </div>
 
       <footer
-        className="py-10 px-8 md:px-16"
+        className="py-8 px-6 md:px-10 lg:px-12"
         style={{ backgroundColor: "#1E1B18" }}
       >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
           {/* Left: Logo & Brokerage */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
             <img
               src={logoImg}
               alt="Marci Metzger Homes"
-              className="h-12 md:h-14 w-auto max-w-[260px] object-contain brightness-0 invert opacity-90"
+              className="h-9 md:h-11 w-auto max-w-[200px] md:max-w-[220px] object-contain brightness-0 invert opacity-90"
             />
             <span className="hidden sm:inline text-[#FAF7F2]/20">|</span>
             <p
-              className="text-[11px] tracking-widest uppercase text-[#FAF7F2]/60"
+              className="text-[10px] sm:text-[11px] tracking-widest uppercase text-[#FAF7F2]/60"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               The Ridge Realty Group
@@ -212,7 +212,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Credits & Disclaimers */}
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-[10px] text-[#FAF7F2]/50 text-center md:text-right">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-[9.5px] sm:text-[10px] text-[#FAF7F2]/50 text-center md:text-right">
             <p style={{ fontFamily: "'Inter', sans-serif" }}>
               © {new Date().getFullYear()} Marci Metzger Homes. All Rights Reserved.
             </p>

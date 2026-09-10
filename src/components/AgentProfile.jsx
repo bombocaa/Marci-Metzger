@@ -13,12 +13,12 @@ export default function AgentProfile() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
           className="relative overflow-hidden bg-[#E8E1D7] flex items-center justify-center"
-          style={{ minHeight: "550px" }}
+          style={{ minHeight: "420px" }}
         >
           <img
             src={profileImg}
             alt="Marci Metzger, Realtor"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top max-h-[560px]"
           />
         </motion.div>
 
@@ -28,18 +28,18 @@ export default function AgentProfile() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
-          className="flex flex-col justify-center px-12 md:px-16 py-20 bg-[#FAF7F2]"
+          className="flex flex-col justify-center px-8 sm:px-10 md:px-12 lg:px-14 py-12 sm:py-16 bg-[#FAF7F2]"
         >
-          <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8075] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase text-[#8A8075] mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
             About Marci
           </p>
-          <h2 className="text-5xl md:text-6xl font-medium text-[#24211E] leading-tight mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#24211E] leading-tight mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
             Marci<br />Metzger
           </h2>
-          <p className="text-base italic mb-8 text-[#786F66]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <p className="text-sm sm:text-base italic mb-5 text-[#786F66]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Realtor for Nearly 3 Decades
           </p>
-          <p className="text-[#5C544D] leading-[1.8] text-sm max-w-sm mb-12" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-[#5C544D] leading-[1.7] text-xs sm:text-sm max-w-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
             Nearly 30 years in the Pahrump valley have given Marci something no marketing can manufacture: genuine local knowledge and a network built on trust. She doesn't just sell homes — she finds the right fit for the right person, every time.
           </p>
         </motion.div>

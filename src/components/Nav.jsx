@@ -129,7 +129,7 @@ export default function Nav() {
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-8 h-24 md:h-28 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
           {/* Hamburger button */}
           <button
             onClick={() => setOpen(true)}
@@ -152,7 +152,7 @@ export default function Nav() {
               <img
                 src={logoImg}
                 alt="Marci Metzger Homes"
-                className={`h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[260px] sm:max-w-[340px] md:max-w-[420px] object-contain transition-all duration-300 ${
+                className={`h-9 sm:h-11 md:h-13 lg:h-14 w-auto max-w-[170px] sm:max-w-[210px] md:max-w-[250px] object-contain transition-all duration-300 ${
                   scrolled ? "" : "brightness-0 invert"
                 }`}
               />
@@ -160,7 +160,7 @@ export default function Nav() {
           </div>
 
           {/* Right Contact Info & Social Icons */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-4">
             {/* Social Icons */}
             <div
               className="flex items-center gap-3.5 pr-3 border-r"
@@ -224,17 +224,17 @@ export default function Nav() {
 
       {/* Drawer Panel */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 z-50 w-full max-w-[340px] sm:max-w-[380px] bg-[#F2ECE4] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-[#E2DAD0] ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-full max-w-[300px] sm:max-w-[340px] bg-[#F2ECE4] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-[#E2DAD0] ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-8 sm:p-12">
+        <div className="p-6 sm:p-8">
           {/* Close Button Top Right & Drawer Logo */}
-          <div className="flex items-center justify-between mb-14">
+          <div className="flex items-center justify-between mb-8">
             <img
               src={logoImg}
               alt="Marci Metzger Homes"
-              className="h-14 sm:h-16 w-auto max-w-[240px] object-contain"
+              className="h-10 sm:h-12 w-auto max-w-[180px] object-contain"
             />
             <button
               onClick={() => setOpen(false)}
@@ -246,7 +246,7 @@ export default function Nav() {
           </div>
 
           {/* Navigation Links List */}
-          <nav className="flex flex-col space-y-7">
+          <nav className="flex flex-col space-y-5">
             {navItems.map((item) => {
               const isActive = activeLink === item.label;
               return (
@@ -269,8 +269,8 @@ export default function Nav() {
         </div>
 
         {/* Bottom Drawer Details & Social Icons */}
-        <div className="p-8 sm:p-12 border-t border-[#E2DAD0]">
-          <div className="flex items-center gap-4 mb-5 text-[#5C544D]">
+        <div className="p-6 sm:p-8 border-t border-[#E2DAD0]">
+          <div className="flex items-center gap-4 mb-4 text-[#5C544D]">
             {socialLinks.map((s) => (
               <a
                 key={s.name}
