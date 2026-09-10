@@ -9,14 +9,14 @@
 
   body {
     font-family: var(--font-sans-modern);
-    background-color: #0B0F17;
-    color: #F3F4F6;
+    background-color: #FAFAFA;
+    color: #18181B;
     overflow-x: hidden;
   }
 
   h1, h2, h3, .font-luxury {
     font-family: var(--font-serif-luxury);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
   }
 
   .font-editorial {
@@ -24,43 +24,50 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F17;
+  background: #FAFAFA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A3347;
-  border-radius: 4px;
+  background: #D4D4D8;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A059;
+  background: #18181B;
 }
 
-/* Luxury Glass & Glow utilities */
-.glass-panel {
-  background: rgba(17, 24, 39, 0.75);
+/* Minimalist Glass & Elevation */
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.glass-dark {
+  background: rgba(18, 18, 18, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #F3E7C4 0%, #C5A059 50%, #9B783E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.card-minimal {
+  background: #FFFFFF;
+  border: 1px solid #E4E4E7;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-minimal:hover {
+  border-color: #18181B;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
-.gold-border-glow {
-  border-color: rgba(197, 160, 89, 0.4);
-  box-shadow: 0 0 25px rgba(197, 160, 89, 0.1);
+.border-hairline {
+  border-color: #E4E4E7;
+}
+
+.border-hairline-dark {
+  border-color: #27272A;
 }
