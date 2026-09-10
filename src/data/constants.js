@@ -1,5 +1,3 @@
-export const GOLD = "#C9A96E";
-
 export const IMGS = {
   hero: "https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg/:/rs=w:767,m",
   agent: "https://images.unsplash.com/photo-1770199105692-9e52ff137cad?w=800&h=1000&fit=crop&auto=format",

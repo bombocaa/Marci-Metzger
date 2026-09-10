@@ -1,5 +1,5 @@
 import React from "react";
-import { GOLD, IMGS } from "../data/constants";
+import { IMGS } from "../data/constants";
 
 export default function SearchSection() {
   return (
@@ -36,8 +36,8 @@ export default function SearchSection() {
             </div>
           </div>
           <button
-            className="px-12 py-4 text-[10px] tracking-[0.25em] uppercase text-black font-semibold hover:opacity-75 transition-opacity cursor-pointer"
-            style={{ fontFamily: "'Inter', sans-serif", backgroundColor: GOLD }}
+            className="px-12 py-4 text-[10px] tracking-[0.25em] uppercase text-white bg-black hover:bg-neutral-800 font-semibold transition-colors cursor-pointer"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Search Now
           </button>

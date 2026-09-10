@@ -1,5 +1,4 @@
 import React from "react";
-import { GOLD } from "../data/constants";
 import logoImg from "../assets/logo.webp";
 
 export default function Contact() {
@@ -23,8 +22,8 @@ export default function Contact() {
                 style={{ fontFamily: "'Inter', sans-serif" }}
               />
               <button
-                className="self-start px-12 py-4 text-[10px] tracking-[0.25em] uppercase text-black font-semibold hover:opacity-80 transition-opacity mt-2 cursor-pointer"
-                style={{ fontFamily: "'Inter', sans-serif", backgroundColor: GOLD }}
+                className="self-start px-12 py-4 text-[10px] tracking-[0.25em] uppercase text-white bg-black hover:bg-neutral-800 font-semibold transition-colors mt-2 cursor-pointer"
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 Send Message
               </button>
@@ -39,7 +38,7 @@ export default function Contact() {
               <p className="text-sm text-black/45 leading-loose mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
                 3190 HW-160, Suite F<br />Pahrump, Nevada 89048
               </p>
-              <a href="tel:2069196886" className="text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif", color: GOLD }}>
+              <a href="tel:2069196886" className="text-sm font-semibold text-black hover:opacity-70 transition-opacity border-b border-black/30 pb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>
                 (206) 919-6886
               </a>
             </div>

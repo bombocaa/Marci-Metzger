@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
-import { GOLD } from "../data/constants";
 import logoImg from "../assets/logo.webp";
 
 export default function Nav() {
@@ -91,8 +90,12 @@ export default function Nav() {
             </a>
             <a
               href="tel:2069196886"
-              className="text-[10px] tracking-[0.15em] border-b pb-0.5"
-              style={{ fontFamily: "'Inter', sans-serif", color: GOLD, borderColor: GOLD + "60" }}
+              className="text-[10px] tracking-[0.15em] border-b pb-0.5 transition-colors"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                color: scrolled ? "#111" : "#fff",
+                borderColor: scrolled ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.3)",
+              }}
             >
               (206) 919-6886
             </a>
@@ -144,7 +147,7 @@ export default function Nav() {
                   onClick={() => handleNavClick(item)}
                   className={`text-xs uppercase tracking-[0.25em] font-medium transition-colors ${
                     isActive
-                      ? "text-[#5C5046] font-bold"
+                      ? "text-black font-bold"
                       : "text-black/55 hover:text-black"
                   }`}
                   style={{ fontFamily: "'Inter', sans-serif" }}
@@ -163,8 +166,8 @@ export default function Nav() {
           </p>
           <a
             href="tel:2069196886"
-            className="text-xs tracking-wider"
-            style={{ fontFamily: "'Inter', sans-serif", color: GOLD }}
+            className="text-xs tracking-wider text-black font-semibold hover:opacity-70 transition-opacity"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             (206) 919-6886
           </a>

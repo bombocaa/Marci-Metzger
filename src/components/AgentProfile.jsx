@@ -1,5 +1,5 @@
 import React from "react";
-import { GOLD, IMGS } from "../data/constants";
+import { IMGS } from "../data/constants";
 
 export default function AgentProfile() {
   return (
@@ -16,13 +16,13 @@ export default function AgentProfile() {
           <h2 className="text-5xl md:text-6xl font-medium text-black leading-tight mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
             Marci<br />Metzger
           </h2>
-          <p className="text-base italic mb-8" style={{ fontFamily: "'Playfair Display', serif", color: GOLD }}>
+          <p className="text-base italic mb-8 text-neutral-500" style={{ fontFamily: "'Playfair Display', serif" }}>
             Realtor for Nearly 3 Decades
           </p>
-          <p className="text-black/40 leading-[1.8] text-sm max-w-sm mb-12" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-black/50 leading-[1.8] text-sm max-w-sm mb-12" style={{ fontFamily: "'Inter', sans-serif" }}>
             Nearly 30 years in the Pahrump valley have given Marci something no marketing can manufacture: genuine local knowledge and a network built on trust. She doesn't just sell homes — she finds the right fit for the right person, every time.
           </p>
-          <a href="tel:2069196886" className="text-sm hover:opacity-70 transition-opacity w-fit font-medium" style={{ fontFamily: "'Inter', sans-serif", color: GOLD }}>
+          <a href="tel:2069196886" className="text-sm hover:opacity-70 transition-opacity w-fit font-medium text-black border-b border-black/30 pb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>
             (206) 919-6886
           </a>
         </div>

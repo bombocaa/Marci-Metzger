@@ -1,5 +1,5 @@
 import React from "react";
-import { GOLD, IMGS } from "../data/constants";
+import { IMGS } from "../data/constants";
 
 export default function Hero() {
   return (
@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="relative z-10 h-full flex flex-col justify-end pb-20 px-8 md:px-16 max-w-7xl mx-auto w-full">
         <div className="mb-6 flex items-center gap-4">
-          <span className="h-px w-10" style={{ backgroundColor: GOLD }} />
+          <span className="h-px w-10 bg-white/40" />
           <span className="text-[10px] tracking-[0.4em] uppercase text-white/50" style={{ fontFamily: "'Inter', sans-serif" }}>
             MARCI METZGER - THE RIDGE REALTY GROUP
           </span>
@@ -20,15 +20,15 @@ export default function Hero() {
 
         <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-white leading-none mb-10">
           <span className="block text-[clamp(3rem,9vw,7rem)] font-medium">Pahrump's</span>
-          <span className="block text-[clamp(3rem,9vw,7rem)] font-medium italic" style={{ color: GOLD }}>Premier</span>
+          <span className="block text-[clamp(3rem,9vw,7rem)] font-light italic text-white/90">Premier</span>
           <span className="block text-[clamp(3rem,9vw,7rem)] font-medium">Realtor</span>
         </h1>
 
         <div className="flex flex-wrap items-center gap-5">
           <a
             href="#contact"
-            className="px-10 py-4 text-[10px] tracking-[0.25em] uppercase text-black font-semibold hover:opacity-85 transition-opacity"
-            style={{ fontFamily: "'Inter', sans-serif", backgroundColor: GOLD }}
+            className="px-10 py-4 text-[10px] tracking-[0.25em] uppercase text-black font-semibold bg-white hover:bg-neutral-200 transition-colors"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Call Now
           </a>
@@ -42,7 +42,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg, ${GOLD}80, transparent)` }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.2), transparent)" }} />
     </section>
   );
 }

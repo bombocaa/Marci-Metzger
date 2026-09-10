@@ -1,5 +1,4 @@
 import React from "react";
-import { GOLD } from "../data/constants";
 
 export default function Marquee() {
   const items = [
@@ -17,7 +16,7 @@ export default function Marquee() {
       <div className="flex gap-12 whitespace-nowrap" style={{ animation: "marquee 30s linear infinite" }}>
         {repeated.map((item, i) => (
           <span key={i} className="text-[10px] tracking-[0.3em] uppercase text-white/40 shrink-0" style={{ fontFamily: "'Inter', sans-serif" }}>
-            {item} <span className="mx-4 opacity-30" style={{ color: GOLD }}>◆</span>
+            {item} <span className="mx-4 text-white/20">◆</span>
           </span>
         ))}
       </div>
