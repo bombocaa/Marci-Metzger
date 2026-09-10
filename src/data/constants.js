@@ -3,7 +3,7 @@ export const IMGS = {
   agent: "https://images.unsplash.com/photo-1770199105692-9e52ff137cad?w=800&h=1000&fit=crop&auto=format",
   sold1: "https://images.unsplash.com/photo-1638885930125-85350348d266?w=900&h=700&fit=crop&auto=format",
   sold2: "https://images.unsplash.com/photo-1778205063665-23257f2dc408?w=900&h=700&fit=crop&auto=format",
-  searchBg: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&h=600&fit=crop&auto=format",
+  searchBg: "https://img1.wsimg.com/isteam/getty/2223376026/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:767,m",
   gallery: [
     "https://images.unsplash.com/photo-1639663742190-1b3dba2eebcf?w=900&h=700&fit=crop&auto=format",
     "https://images.unsplash.com/photo-1682888813913-e13f18692019?w=600&h=500&fit=crop&auto=format",
