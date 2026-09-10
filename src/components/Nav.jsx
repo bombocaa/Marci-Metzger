@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import { X } from "lucide-react";
 import logoImg from "../assets/logo.webp";
 import yelpIcon from "../assets/yelp.png";
@@ -117,7 +118,10 @@ export default function Nav() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ y: -25, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="fixed top-0 left-0 right-0 z-40 transition-all duration-500"
         style={{
           backgroundColor: scrolled ? "rgba(250, 247, 242, 0.95)" : "transparent",
@@ -207,7 +211,7 @@ export default function Nav() {
             </a>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Slide-out Sidebar Drawer */}
       {/* Backdrop */}

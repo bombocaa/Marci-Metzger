@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 export default function Marquee() {
   const items = [
@@ -9,10 +10,13 @@ export default function Marquee() {
     "5-Star Service",
     "The Ridge Realty Group",
   ];
-  const repeated = [...items, ...items, ...items];
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       role="region"
       aria-label="Key Highlights and Achievements"
       className="overflow-hidden py-4 border-y border-[#2E2925]"
@@ -36,6 +40,6 @@ export default function Marquee() {
         ))}
       </div>
       <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }`}</style>
-    </div>
+    </motion.div>
   );
 }

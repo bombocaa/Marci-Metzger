@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { IMGS } from "../data/constants";
 
@@ -22,14 +23,26 @@ export default function SearchSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {/* Title */}
-        <div className="text-center mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-8"
+        >
           <h2 className="text-4xl md:text-5xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Find Your Dream Home
           </h2>
-        </div>
+        </motion.div>
 
         {/* Search Filter Card */}
-        <div className="bg-[#FAF7F2]/10 backdrop-blur-md p-8 sm:p-10 rounded-xs shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.85, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+          className="bg-[#FAF7F2]/10 backdrop-blur-md p-8 sm:p-10 rounded-xs shadow-2xl"
+        >
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
             {[
               { label: "Location", options: ["Any", "Pahrump", "Las Vegas", "Henderson"] },
@@ -80,7 +93,7 @@ export default function SearchSection() {
               Search Properties
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

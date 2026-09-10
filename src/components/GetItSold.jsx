@@ -1,20 +1,33 @@
 import React from "react";
+import { motion } from "motion/react";
 import house1 from "../assets/house_1.webp";
 import house2 from "../assets/house_2.webp";
 import house3 from "../assets/house_3.webp";
 
 export default function GetItSold() {
   return (
-    <section className="bg-[#FAF7F2] py-28 px-8 md:px-16 border-t border-[#E2DAD0]">
+    <section className="bg-[#FAF7F2] py-28 px-8 md:px-16 border-t border-[#E2DAD0] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-20"
+        >
           <h2 className="text-5xl md:text-7xl font-medium text-[#24211E] leading-none" style={{ fontFamily: "'Playfair Display', serif" }}>
             Get It<br /><em>Sold.</em>
           </h2>
-        </div>
+        </motion.div>
 
         {/* 1. Pool Villa */}
-        <div className="grid md:grid-cols-12 gap-8 mb-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid md:grid-cols-12 gap-8 mb-16 items-center"
+        >
           <div className="md:col-span-7 relative overflow-hidden group">
             <img
               src={house2}
@@ -30,10 +43,16 @@ export default function GetItSold() {
               In 2021 alone, we helped nearly 90 families — closing $28.5 million in sales. Not because of luck, but because we outwork, outmarket, and outlast the competition on every single listing.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* 2. Modern Interior */}
-        <div className="grid md:grid-cols-12 gap-8 mb-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid md:grid-cols-12 gap-8 mb-16 items-center"
+        >
           <div className="md:col-span-5 flex flex-col justify-center order-last md:order-first">
             <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
               Don't just list it —
@@ -49,10 +68,16 @@ export default function GetItSold() {
               className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* 3. Keys / Closing */}
-        <div className="grid md:grid-cols-12 gap-8 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid md:grid-cols-12 gap-8 items-center"
+        >
           <div className="md:col-span-7 relative overflow-hidden group">
             <img
               src={house3}
@@ -68,7 +93,7 @@ export default function GetItSold() {
               Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, & more!
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

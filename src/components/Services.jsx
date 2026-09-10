@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import svc1 from "../assets/service_1.webp";
 import svc2 from "../assets/service_2.webp";
 import svc3 from "../assets/service_3.webp";
@@ -26,18 +27,31 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-28 px-8 md:px-16 bg-[#FAF7F2] border-t border-[#E2DAD0]">
+    <section id="services" className="py-28 px-8 md:px-16 bg-[#FAF7F2] border-t border-[#E2DAD0] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-16"
+        >
           <h2 className="text-4xl md:text-6xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Our Services
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-12">
           {items.map(({ src, alt, title, body }, i) => (
-            <div key={title} className={`group ${i === 1 ? "md:mt-12" : ""}`}>
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: i * 0.15, ease: "easeOut" }}
+              className={`group ${i === 1 ? "md:mt-12" : ""}`}
+            >
               <div className="overflow-hidden mb-7">
                 <img
                   src={src}
@@ -57,7 +71,7 @@ export default function Services() {
               >
                 {body}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,19 +1,35 @@
 import React from "react";
+import { motion } from "motion/react";
 import profileImg from "../assets/profile.webp";
 
 export default function AgentProfile() {
   return (
-    <section id="about" className="bg-[#FAF7F2]">
+    <section id="about" className="bg-[#FAF7F2] overflow-hidden">
       <div className="grid md:grid-cols-2">
-        <div className="relative overflow-hidden bg-[#E8E1D7] flex items-center justify-center" style={{ minHeight: "550px" }}>
+        {/* Profile Image with subtle scale/fade in */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+          className="relative overflow-hidden bg-[#E8E1D7] flex items-center justify-center"
+          style={{ minHeight: "550px" }}
+        >
           <img
             src={profileImg}
             alt="Marci Metzger, Realtor"
             className="w-full h-full object-cover object-top"
           />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col justify-center px-12 md:px-16 py-20 bg-[#FAF7F2]">
+        {/* Biography Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+          className="flex flex-col justify-center px-12 md:px-16 py-20 bg-[#FAF7F2]"
+        >
           <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8075] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
             About Marci
           </p>
@@ -26,7 +42,7 @@ export default function AgentProfile() {
           <p className="text-[#5C544D] leading-[1.8] text-sm max-w-sm mb-12" style={{ fontFamily: "'Inter', sans-serif" }}>
             Nearly 30 years in the Pahrump valley have given Marci something no marketing can manufacture: genuine local knowledge and a network built on trust. She doesn't just sell homes — she finds the right fit for the right person, every time.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

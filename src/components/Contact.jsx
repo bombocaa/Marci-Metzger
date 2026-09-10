@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import logoImg from "../assets/logo.webp";
 
@@ -16,12 +17,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="overflow-hidden">
       <div className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-start">
 
           {/* Column 1: Send Message Form */}
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col"
+          >
             <h2 className="text-3xl sm:text-4xl font-medium text-[#24211E] leading-tight mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
               Let's Find<br />Your Next<br /><em>Home.</em>
             </h2>
@@ -111,10 +118,16 @@ export default function Contact() {
                 </button>
               </form>
             )}
-          </div>
+          </motion.div>
 
           {/* Column 2: Hours */}
-          <div className="flex flex-col pt-1">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            className="flex flex-col pt-1"
+          >
             <p className="text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
               Hours of Operation
             </p>
@@ -126,10 +139,16 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Column 3: Our Office, Address & Maps */}
-          <div className="flex flex-col pt-1">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col pt-1"
+          >
             <p className="text-[10px] tracking-[0.3em] uppercase text-[#8A8075] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
               Our Office
             </p>
@@ -166,7 +185,7 @@ export default function Contact() {
                 className="w-full h-full"
               />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

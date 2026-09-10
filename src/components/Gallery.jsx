@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import g1 from "../assets/photo_gallery_1.webp";
 import g2 from "../assets/photo_gallery_2.webp";
@@ -60,21 +61,27 @@ export default function Gallery() {
   }, [selectedIdx, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section id="gallery" className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0]">
+    <section id="gallery" className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+        >
           <div>
             <h2 className="text-4xl md:text-6xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
               Photo Gallery
             </h2>
           </div>
-        </div>
+        </motion.div>
 
         {/* Gallery Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[240px]">
           {galleryImages.map((img, idx) => (
-            <div
+            <motion.div
               key={idx}
               role="button"
               tabIndex={0}
@@ -83,6 +90,10 @@ export default function Gallery() {
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") openLightbox(idx);
               }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: "easeOut" }}
               className={`relative overflow-hidden group cursor-pointer rounded-xs focus:outline-none focus:ring-2 focus:ring-[#24211E] ${img.span}`}
             >
               <img
@@ -90,56 +101,68 @@ export default function Gallery() {
                 alt={img.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Lightbox Modal */}
-      {selectedIdx !== null && (
-        <div
-          onClick={closeLightbox}
-          className="fixed inset-0 z-50 bg-[#1E1B18]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
-        >
-          <button
+      <AnimatePresence>
+        {selectedIdx !== null && (
+          <motion.div
+            key="lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             onClick={closeLightbox}
-            className="absolute top-6 right-6 p-2 text-[#FAF7F2]/70 hover:text-[#FAF7F2] transition-colors cursor-pointer z-10"
-            aria-label="Close Lightbox"
+            className="fixed inset-0 z-50 bg-[#1E1B18]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
           >
-            <X className="w-8 h-8 stroke-[1.5]" />
-          </button>
+            <button
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 p-2 text-[#FAF7F2]/70 hover:text-[#FAF7F2] transition-colors cursor-pointer z-10"
+              aria-label="Close Lightbox"
+            >
+              <X className="w-8 h-8 stroke-[1.5]" />
+            </button>
 
-          <button
-            onClick={prevImage}
-            className="absolute left-4 sm:left-8 p-3 bg-[#FAF7F2]/10 hover:bg-[#FAF7F2]/25 text-[#FAF7F2] rounded-full transition-colors cursor-pointer z-10"
-            aria-label="Previous image"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
+            <button
+              onClick={prevImage}
+              className="absolute left-4 sm:left-8 p-3 bg-[#FAF7F2]/10 hover:bg-[#FAF7F2]/25 text-[#FAF7F2] rounded-full transition-colors cursor-pointer z-10"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
 
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-5xl max-h-[85vh] flex flex-col items-center"
-          >
-            <img
-              src={galleryImages[selectedIdx].src}
-              alt={galleryImages[selectedIdx].title}
-              className="max-h-[75vh] w-auto object-contain rounded-xs shadow-2xl"
-            />
-            <p className="text-[#FAF7F2] text-sm tracking-wider mt-4 text-center font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-              {galleryImages[selectedIdx].title} ({selectedIdx + 1} / {galleryImages.length})
-            </p>
-          </div>
+            <motion.div
+              key={selectedIdx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-5xl max-h-[85vh] flex flex-col items-center"
+            >
+              <img
+                src={galleryImages[selectedIdx].src}
+                alt={galleryImages[selectedIdx].title}
+                className="max-h-[75vh] w-auto object-contain rounded-xs shadow-2xl"
+              />
+              <p className="text-[#FAF7F2] text-sm tracking-wider mt-4 text-center font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
+                {galleryImages[selectedIdx].title} ({selectedIdx + 1} / {galleryImages.length})
+              </p>
+            </motion.div>
 
-          <button
-            onClick={nextImage}
-            className="absolute right-4 sm:right-8 p-3 bg-[#FAF7F2]/10 hover:bg-[#FAF7F2]/25 text-[#FAF7F2] rounded-full transition-colors cursor-pointer z-10"
-            aria-label="Next image"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-      )}
+            <button
+              onClick={nextImage}
+              className="absolute right-4 sm:right-8 p-3 bg-[#FAF7F2]/10 hover:bg-[#FAF7F2]/25 text-[#FAF7F2] rounded-full transition-colors cursor-pointer z-10"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
