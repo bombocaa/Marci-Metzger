@@ -26,9 +26,6 @@ export default function AgentProfile() {
           <p className="text-[#5C544D] leading-[1.8] text-sm max-w-sm mb-12" style={{ fontFamily: "'Inter', sans-serif" }}>
             Nearly 30 years in the Pahrump valley have given Marci something no marketing can manufacture: genuine local knowledge and a network built on trust. She doesn't just sell homes — she finds the right fit for the right person, every time.
           </p>
-          <a href="tel:2069196886" className="text-sm hover:opacity-70 transition-opacity w-fit font-medium text-[#24211E] border-b border-[#24211E]/30 pb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>
-            (206) 919-6886
-          </a>
         </div>
       </div>
     </section>
