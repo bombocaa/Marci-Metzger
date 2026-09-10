@@ -61,15 +61,15 @@ export default function Gallery() {
   }, [selectedIdx, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section id="gallery" className="bg-[#FAF7F2] py-16 md:py-20 px-6 md:px-10 lg:px-12 border-t border-[#E2DAD0] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="gallery" className="bg-[#FAF7F2] py-14 sm:py-16 md:py-18 px-6 md:px-10 lg:px-12 border-t border-[#E2DAD0] overflow-hidden">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-8 gap-4"
         >
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -78,8 +78,8 @@ export default function Gallery() {
           </div>
         </motion.div>
 
-        {/* Gallery Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 auto-rows-[170px] sm:auto-rows-[190px] md:auto-rows-[210px]">
+        {/* Gallery Bento Grid - Compact Proportions */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-2.5 auto-rows-[125px] sm:auto-rows-[140px] md:auto-rows-[155px] lg:auto-rows-[165px]">
           {galleryImages.map((img, idx) => (
             <motion.div
               key={idx}
