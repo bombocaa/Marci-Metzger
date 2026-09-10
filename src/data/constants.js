@@ -1,7 +1,7 @@
 export const GOLD = "#C9A96E";
 
 export const IMGS = {
-  hero: "https://images.unsplash.com/photo-1748063578185-3d68121b11ff?w=1800&h=1080&fit=crop&auto=format",
+  hero: "https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg/:/rs=w:767,m",
   agent: "https://images.unsplash.com/photo-1770199105692-9e52ff137cad?w=800&h=1000&fit=crop&auto=format",
   sold1: "https://images.unsplash.com/photo-1638885930125-85350348d266?w=900&h=700&fit=crop&auto=format",
   sold2: "https://images.unsplash.com/photo-1778205063665-23257f2dc408?w=900&h=700&fit=crop&auto=format",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { GOLD } from "../data/constants";
+import logoImg from "../assets/logo.webp";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +50,7 @@ export default function Nav() {
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-8 h-24 md:h-28 flex items-center justify-between">
           {/* Hamburger button */}
           <button
             onClick={() => setOpen(true)}
@@ -68,15 +69,15 @@ export default function Nav() {
 
           {/* Logo Center */}
           <div className="absolute left-1/2 -translate-x-1/2 text-center select-none">
-            <p
-              className="text-xl tracking-[0.35em] uppercase font-semibold"
-              style={{ fontFamily: "'Playfair Display', serif", color: scrolled ? "#111" : "#fff" }}
-            >
-              Marci Metzger
-            </p>
-            <p className="text-xs italic -mt-0.5" style={{ fontFamily: "'Playfair Display', serif", color: GOLD }}>
-              Homes
-            </p>
+            <a href="#" className="flex items-center justify-center">
+              <img
+                src={logoImg}
+                alt="Marci Metzger Homes"
+                className={`h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-[260px] sm:max-w-[340px] md:max-w-[420px] object-contain transition-all duration-300 ${
+                  scrolled ? "" : "brightness-0 invert"
+                }`}
+              />
+            </a>
           </div>
 
           {/* Right Contact Info */}
@@ -116,8 +117,13 @@ export default function Nav() {
         style={{ backgroundColor: "#F4F4F4" }}
       >
         <div className="p-8 sm:p-12">
-          {/* Close Button Top Right */}
-          <div className="flex justify-end mb-14">
+          {/* Close Button Top Right & Drawer Logo */}
+          <div className="flex items-center justify-between mb-14">
+            <img
+              src={logoImg}
+              alt="Marci Metzger Homes"
+              className="h-14 sm:h-16 w-auto max-w-[240px] object-contain"
+            />
             <button
               onClick={() => setOpen(false)}
               className="p-1 text-black/50 hover:text-black transition-colors cursor-pointer"

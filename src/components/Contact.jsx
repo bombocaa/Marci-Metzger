@@ -1,5 +1,6 @@
 import React from "react";
 import { GOLD } from "../data/constants";
+import logoImg from "../assets/logo.webp";
 
 export default function Contact() {
   return (
@@ -68,12 +69,15 @@ export default function Contact() {
       </div>
 
       <footer
-        className="py-7 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-3"
+        className="py-7 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4"
         style={{ backgroundColor: "#111" }}
       >
-        <p className="text-[10px] tracking-widest uppercase text-white/25" style={{ fontFamily: "'Inter', sans-serif" }}>
-          © {new Date().getFullYear()} Marci Metzger Homes
-        </p>
+        <div className="flex items-center gap-5">
+          <img src={logoImg} alt="Marci Metzger Homes" className="h-10 md:h-12 w-auto max-w-[220px] object-contain brightness-0 invert opacity-70" />
+          <p className="text-[10px] tracking-widest uppercase text-white/25" style={{ fontFamily: "'Inter', sans-serif" }}>
+            © {new Date().getFullYear()} Marci Metzger Homes
+          </p>
+        </div>
         <p className="text-[10px] text-white/15" style={{ fontFamily: "'Inter', sans-serif" }}>
           The Ridge Realty Group · Equal Housing Opportunity · Nevada License #12345
         </p>

@@ -4,7 +4,7 @@ import { GOLD, IMGS } from "../data/constants";
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[700px]">
-      <img src={IMGS.hero} alt="Luxury home exterior at night" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={IMGS.hero} alt="Mountain Falls Pond - Pahrump, Nevada" className="absolute inset-0 w-full h-full object-cover" />
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%)" }}
@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="mb-6 flex items-center gap-4">
           <span className="h-px w-10" style={{ backgroundColor: GOLD }} />
           <span className="text-[10px] tracking-[0.4em] uppercase text-white/50" style={{ fontFamily: "'Inter', sans-serif" }}>
-            The Ridge Realty Group · Pahrump, NV
+            MARCI METZGER - THE RIDGE REALTY GROUP
           </span>
         </div>
 
