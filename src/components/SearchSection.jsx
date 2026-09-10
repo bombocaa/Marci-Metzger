@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronDown } from "lucide-react";
 import { IMGS } from "../data/constants";
 
 export default function SearchSection() {
@@ -38,16 +39,24 @@ export default function SearchSection() {
               { label: "Baths", options: ["Any", "1+", "2+", "3+"] },
             ].map(({ label, options }) => (
               <div key={label}>
-                <label className="block text-[9px] tracking-[0.25em] uppercase text-[#FAF7F2]/70 mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <label htmlFor={`filter-${label}`} className="block text-[9px] tracking-[0.25em] uppercase text-[#FAF7F2]/70 mb-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {label}
                 </label>
-                <select className="w-full border-b border-[#FAF7F2]/30 pb-2 text-sm text-[#FAF7F2] bg-transparent focus:outline-none appearance-none cursor-pointer" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  {options.map((o) => (
-                    <option key={o} className="bg-[#24211E] text-[#FAF7F2]">
-                      {o}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative flex items-center">
+                  <select
+                    id={`filter-${label}`}
+                    aria-label={`Filter by ${label}`}
+                    className="w-full border-b border-[#FAF7F2]/30 pb-2 pr-6 text-sm text-[#FAF7F2] bg-transparent focus:outline-none focus:border-[#FAF7F2] appearance-none cursor-pointer"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  >
+                    {options.map((o) => (
+                      <option key={o} className="bg-[#24211E] text-[#FAF7F2]">
+                        {o}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="w-3.5 h-3.5 text-[#FAF7F2]/60 absolute right-1 pointer-events-none mb-1.5" />
+                </div>
               </div>
             ))}
             <div>

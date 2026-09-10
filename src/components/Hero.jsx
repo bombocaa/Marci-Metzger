@@ -23,17 +23,25 @@ export default function Hero() {
           <span className="block text-[clamp(2.75rem,8vw,6.5rem)] font-medium">Realtor</span>
         </h1>
 
-        <div className="flex flex-wrap items-center gap-5">
+        <div className="flex flex-wrap items-center gap-4">
           <a
             href="#contact"
-            className="px-9 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#24211E] font-semibold bg-[#FAF7F2] hover:bg-[#EBE5DF] transition-colors"
+            className="px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#24211E] font-semibold bg-[#FAF7F2] hover:bg-[#EBE5DF] transition-colors cursor-pointer"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Call Now
+            Get In Touch
+          </a>
+          <a
+            href="tel:2069196886"
+            aria-label="Call Marci Metzger at (206) 919-6886"
+            className="px-7 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2] border border-[#FAF7F2]/40 hover:border-[#FAF7F2] hover:bg-[#FAF7F2]/10 font-semibold transition-colors cursor-pointer"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Call (206) 919-6886
           </a>
           <a
             href="#search"
-            className="text-[10px] tracking-[0.2em] uppercase text-[#FAF7F2]/70 hover:text-[#FAF7F2] transition-colors underline underline-offset-4 decoration-[#FAF7F2]/30"
+            className="text-[10px] tracking-[0.2em] uppercase text-[#FAF7F2]/80 hover:text-[#FAF7F2] transition-colors underline underline-offset-4 decoration-[#FAF7F2]/40 ml-2"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Search Listings

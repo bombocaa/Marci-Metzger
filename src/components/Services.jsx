@@ -37,7 +37,7 @@ export default function Services() {
 
         <div className="grid md:grid-cols-3 gap-12">
           {items.map(({ src, alt, title, body }, i) => (
-            <div key={title} className="group" style={{ marginTop: i === 1 ? "48px" : "0" }}>
+            <div key={title} className={`group ${i === 1 ? "md:mt-12" : ""}`}>
               <div className="overflow-hidden mb-7">
                 <img
                   src={src}

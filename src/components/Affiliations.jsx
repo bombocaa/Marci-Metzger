@@ -13,7 +13,7 @@ const affiliates = [
 
 export default function Affiliations() {
   return (
-    <section className="bg-white py-12 sm:py-16 px-8 md:px-16">
+    <section className="bg-[#FAF7F2] py-12 sm:py-16 px-8 md:px-16 border-t border-[#E2DAD0]">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Badges with Elegant Separation Lines */}
         <div className="w-full flex flex-wrap items-center justify-center sm:justify-around gap-8 sm:gap-6 md:gap-8">

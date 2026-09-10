@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 import logoImg from "../assets/logo.webp";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success'
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setTimeout(() => {
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    }, 600);
+  };
+
   return (
     <section id="contact">
       <div className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0]">
@@ -12,29 +25,92 @@ export default function Contact() {
             <h2 className="text-3xl sm:text-4xl font-medium text-[#24211E] leading-tight mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
               Let's Find<br />Your Next<br /><em>Home.</em>
             </h2>
-            <div className="flex flex-col gap-4">
-              {["Name", "Email", "Phone"].map((field) => (
-                <input
-                  key={field}
-                  type="text"
-                  placeholder={field}
-                  className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075]/60 focus:border-[#786F66] transition-colors"
+
+            {status === "success" ? (
+              <div className="p-6 bg-[#F2ECE4] border border-[#E2DAD0] rounded-xs flex flex-col items-start gap-3">
+                <div className="flex items-center gap-2 text-[#24211E]">
+                  <CheckCircle2 className="w-5 h-5 text-[#3B3632]" />
+                  <p className="font-semibold text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    Message Sent Successfully!
+                  </p>
+                </div>
+                <p className="text-xs text-[#5C544D] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  Thank you for reaching out. Marci Metzger will get back to you promptly.
+                </p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="mt-2 text-[10px] uppercase tracking-widest text-[#24211E] font-semibold underline underline-offset-4 cursor-pointer"
                   style={{ fontFamily: "'Inter', sans-serif" }}
-                />
-              ))}
-              <textarea
-                placeholder="Tell us what you're looking for"
-                rows={3}
-                className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075]/60 resize-none focus:border-[#786F66] transition-colors"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              />
-              <button
-                className="self-start px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2] bg-[#24211E] hover:bg-[#3B3632] font-semibold transition-colors mt-2 cursor-pointer"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                Send Message
-              </button>
-            </div>
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div>
+                  <label htmlFor="contact-name" className="sr-only">Full Name</label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Name *"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-email" className="sr-only">Email Address</label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Email *"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-phone" className="sr-only">Phone Number</label>
+                  <input
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] focus:border-[#24211E] transition-colors"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-message" className="sr-only">Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder="Tell us what you're looking for"
+                    rows={3}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full border-b border-[#E2DAD0] pb-2.5 text-sm text-[#24211E] bg-transparent focus:outline-none placeholder-[#8A8075] resize-none focus:border-[#24211E] transition-colors"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="self-start px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2] bg-[#24211E] hover:bg-[#3B3632] disabled:opacity-50 font-semibold transition-colors mt-2 cursor-pointer"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  {status === "submitting" ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+            )}
           </div>
 
           {/* Column 2: Hours */}

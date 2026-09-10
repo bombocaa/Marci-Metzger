@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import g1 from "../assets/photo_gallery_1.webp";
 import g2 from "../assets/photo_gallery_2.webp";
@@ -22,15 +22,42 @@ export default function Gallery() {
   const [selectedIdx, setSelectedIdx] = useState(null);
 
   const openLightbox = (idx) => setSelectedIdx(idx);
-  const closeLightbox = () => setSelectedIdx(null);
-  const nextImage = (e) => {
-    e.stopPropagation();
-    setSelectedIdx((prev) => (prev + 1) % galleryImages.length);
-  };
-  const prevImage = (e) => {
-    e.stopPropagation();
-    setSelectedIdx((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
+  const closeLightbox = useCallback(() => setSelectedIdx(null), []);
+  const nextImage = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      setSelectedIdx((prev) => (prev !== null ? (prev + 1) % galleryImages.length : null));
+    },
+    []
+  );
+  const prevImage = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      setSelectedIdx((prev) =>
+        prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null
+      );
+    },
+    []
+  );
+
+  // Keyboard navigation & scroll locking
+  useEffect(() => {
+    if (selectedIdx === null) return;
+
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIdx, closeLightbox, nextImage, prevImage]);
 
   return (
     <section id="gallery" className="bg-[#FAF7F2] py-24 px-8 md:px-16 border-t border-[#E2DAD0]">
@@ -49,8 +76,14 @@ export default function Gallery() {
           {galleryImages.map((img, idx) => (
             <div
               key={idx}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${img.title}`}
               onClick={() => openLightbox(idx)}
-              className={`relative overflow-hidden group cursor-pointer rounded-xs ${img.span}`}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") openLightbox(idx);
+              }}
+              className={`relative overflow-hidden group cursor-pointer rounded-xs focus:outline-none focus:ring-2 focus:ring-[#24211E] ${img.span}`}
             >
               <img
                 src={img.src}

@@ -47,9 +47,46 @@ export default function Nav() {
   const [activeLink, setActiveLink] = useState("HOME");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+      if (window.scrollY < 250) {
+        setActiveLink("HOME");
+      }
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Sync active nav item on scroll using IntersectionObserver
+  useEffect(() => {
+    const sectionMap = [
+      { id: "about", label: "ABOUT US" },
+      { id: "search", label: "LISTINGS" },
+      { id: "gallery", label: "GALLERY" },
+      { id: "services", label: "SERVICES" },
+      { id: "contact", label: "CONTACT" },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const found = sectionMap.find((s) => s.id === entry.target.id);
+            if (found && window.scrollY >= 250) {
+              setActiveLink(found.label);
+            }
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -40% 0px", threshold: 0.1 }
+    );
+
+    sectionMap.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   // Lock body scroll when sidebar is open
