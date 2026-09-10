@@ -3,7 +3,7 @@ import { IMGS } from "../data/constants";
 
 export default function SearchSection() {
   return (
-    <section id="search" className="relative py-36 sm:py-44 md:py-52 px-8 md:px-16 min-h-[700px] md:min-h-[800px] flex items-center justify-center overflow-hidden border-t border-b border-[#E2DAD0]">
+    <section id="search" className="relative py-20 sm:py-24 md:py-28 px-8 md:px-16 min-h-[480px] md:min-h-[540px] flex items-center justify-center overflow-hidden border-t border-b border-[#E2DAD0]">
       {/* Full Background Image */}
       <img
         src={IMGS.searchBg}
@@ -21,8 +21,8 @@ export default function SearchSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-medium text-[#FAF7F2]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Find Your Dream Home
           </h2>
         </div>
