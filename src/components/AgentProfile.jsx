@@ -1,12 +1,16 @@
 import React from "react";
-import { IMGS } from "../data/constants";
+import profileImg from "../assets/profile.webp";
 
 export default function AgentProfile() {
   return (
     <section id="about" className="bg-[#FAF7F2]">
       <div className="grid md:grid-cols-2">
-        <div className="relative overflow-hidden" style={{ minHeight: "600px" }}>
-          <img src={IMGS.agent} alt="Marci Metzger, Realtor" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <div className="relative overflow-hidden bg-[#E8E1D7] flex items-center justify-center" style={{ minHeight: "550px" }}>
+          <img
+            src={profileImg}
+            alt="Marci Metzger, Realtor"
+            className="w-full h-full object-cover object-top"
+          />
         </div>
 
         <div className="flex flex-col justify-center px-12 md:px-16 py-20 bg-[#FAF7F2]">

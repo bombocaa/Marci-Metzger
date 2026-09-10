@@ -1,5 +1,7 @@
 import React from "react";
-import { IMGS } from "../data/constants";
+import house1 from "../assets/house_1.webp";
+import house2 from "../assets/house_2.webp";
+import house3 from "../assets/house_3.webp";
 
 export default function GetItSold() {
   return (
@@ -11,31 +13,69 @@ export default function GetItSold() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-8 mb-8">
+        {/* 1. Pool Villa */}
+        <div className="grid md:grid-cols-12 gap-8 mb-16 items-center">
           <div className="md:col-span-7 relative overflow-hidden group">
-            <img src={IMGS.sold1} alt="Luxury living room" className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            <img
+              src={house2}
+              alt="Luxury residence with pool"
+              className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
           </div>
-          <div className="md:col-span-5 flex flex-col justify-end pb-6">
+          <div className="md:col-span-5 flex flex-col justify-center">
             <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
               Top Residential Sales · Last 5 Years
             </p>
+            <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Proven results across Southern Nevada
+            </h3>
             <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
               In 2021 alone, we helped nearly 90 families — closing $28.5 million in sales. Not because of luck, but because we outwork, outmarket, and outlast the competition on every single listing.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-span-5 flex flex-col justify-end pb-6 order-last md:order-first">
+        {/* 2. Modern Interior */}
+        <div className="grid md:grid-cols-12 gap-8 mb-16 items-center">
+          <div className="md:col-span-5 flex flex-col justify-center order-last md:order-first">
+            <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Tailored Marketing Strategy
+            </p>
             <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
               Don't just list it —<br />get it <em>sold.</em>
             </h3>
             <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-              We exhaust every avenue. Professional photography, targeted digital marketing, open houses, buyer's agent outreach. Your home reaches every possible buyer at the right moment.
+              Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.
             </p>
           </div>
           <div className="md:col-span-7 relative overflow-hidden group">
-            <img src={IMGS.sold2} alt="Luxury pool villa" className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            <img
+              src={house1}
+              alt="Luxury interior and kitchen"
+              className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
+        </div>
+
+        {/* 3. Keys / Closing */}
+        <div className="grid md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-7 relative overflow-hidden group">
+            <img
+              src={house3}
+              alt="House keys representing smooth closing"
+              className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
+          <div className="md:col-span-5 flex flex-col justify-center">
+            <p className="text-[#8A8075] text-xs uppercase tracking-widest mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Guide to Buyers
+            </p>
+            <h3 className="text-2xl md:text-3xl font-medium text-[#24211E] mb-4 leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
+              From first showing to <em>handing over keys.</em>
+            </h3>
+            <p className="text-[#5C544D] leading-[1.75] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, & more!
+            </p>
           </div>
         </div>
       </div>

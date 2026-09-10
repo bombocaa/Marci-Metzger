@@ -20,7 +20,6 @@ export default function Hero() {
 
         <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-[#FAF7F2] leading-none mb-10">
           <span className="block text-[clamp(3rem,9vw,7rem)] font-medium">Pahrump's</span>
-          <span className="block text-[clamp(3rem,9vw,7rem)] font-light italic text-[#FAF7F2]/90">Premier</span>
           <span className="block text-[clamp(3rem,9vw,7rem)] font-medium">Realtor</span>
         </h1>
 
