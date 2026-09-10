@@ -44,8 +44,8 @@ export default function Nav() {
       <header
         className="fixed top-0 left-0 right-0 z-40 transition-all duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
-          borderBottom: scrolled ? "1px solid rgba(0,0,0,0.06)" : "none",
+          backgroundColor: scrolled ? "rgba(250, 247, 242, 0.95)" : "transparent",
+          borderBottom: scrolled ? "1px solid rgba(226, 218, 208, 0.7)" : "none",
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
@@ -58,11 +58,11 @@ export default function Nav() {
           >
             <span
               className="block h-px transition-all duration-300 group-hover:w-6"
-              style={{ width: "24px", backgroundColor: scrolled ? "#111" : "#fff" }}
+              style={{ width: "24px", backgroundColor: scrolled ? "#24211E" : "#FAF7F2" }}
             />
             <span
               className="block h-px transition-all duration-300"
-              style={{ width: "14px", backgroundColor: scrolled ? "#111" : "rgba(255,255,255,0.5)" }}
+              style={{ width: "14px", backgroundColor: scrolled ? "#24211E" : "rgba(250,247,242,0.6)" }}
             />
           </button>
 
@@ -84,7 +84,7 @@ export default function Nav() {
             <a
               href="#contact"
               className="text-[10px] tracking-[0.2em] uppercase transition-colors"
-              style={{ fontFamily: "'Inter', sans-serif", color: scrolled ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.6)" }}
+              style={{ fontFamily: "'Inter', sans-serif", color: scrolled ? "#5C544D" : "rgba(250,247,242,0.7)" }}
             >
               Contact
             </a>
@@ -93,8 +93,8 @@ export default function Nav() {
               className="text-[10px] tracking-[0.15em] border-b pb-0.5 transition-colors"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                color: scrolled ? "#111" : "#fff",
-                borderColor: scrolled ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.3)",
+                color: scrolled ? "#24211E" : "#FAF7F2",
+                borderColor: scrolled ? "rgba(36,33,30,0.3)" : "rgba(250,247,242,0.4)",
               }}
             >
               (206) 919-6886
@@ -107,17 +107,16 @@ export default function Nav() {
       {/* Backdrop */}
       <div
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/40 backdrop-blur-xs transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 bg-[#1E1B18]/50 backdrop-blur-xs transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       />
 
       {/* Drawer Panel */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 z-50 w-full max-w-[340px] sm:max-w-[380px] bg-[#F4F4F4] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-full max-w-[340px] sm:max-w-[380px] bg-[#F2ECE4] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-[#E2DAD0] ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
-        style={{ backgroundColor: "#F4F4F4" }}
       >
         <div className="p-8 sm:p-12">
           {/* Close Button Top Right & Drawer Logo */}
@@ -129,7 +128,7 @@ export default function Nav() {
             />
             <button
               onClick={() => setOpen(false)}
-              className="p-1 text-black/50 hover:text-black transition-colors cursor-pointer"
+              className="p-1 text-[#5C544D] hover:text-[#24211E] transition-colors cursor-pointer"
               aria-label="Close Navigation Menu"
             >
               <X className="w-5 h-5 stroke-[1.25]" />
@@ -147,8 +146,8 @@ export default function Nav() {
                   onClick={() => handleNavClick(item)}
                   className={`text-xs uppercase tracking-[0.25em] font-medium transition-colors ${
                     isActive
-                      ? "text-black font-bold"
-                      : "text-black/55 hover:text-black"
+                      ? "text-[#24211E] font-bold"
+                      : "text-[#5C544D] hover:text-[#24211E]"
                   }`}
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
@@ -160,13 +159,13 @@ export default function Nav() {
         </div>
 
         {/* Bottom Drawer Details */}
-        <div className="p-8 sm:p-12 border-t border-black/5">
-          <p className="text-[10px] tracking-[0.25em] uppercase text-black/30 mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
+        <div className="p-8 sm:p-12 border-t border-[#E2DAD0]">
+          <p className="text-[10px] tracking-[0.25em] uppercase text-[#8A8075] mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
             The Ridge Realty Group
           </p>
           <a
             href="tel:2069196886"
-            className="text-xs tracking-wider text-black font-semibold hover:opacity-70 transition-opacity"
+            className="text-xs tracking-wider text-[#24211E] font-semibold hover:text-[#5C544D] transition-colors"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             (206) 919-6886

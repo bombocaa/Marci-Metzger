@@ -3,13 +3,13 @@ import { IMGS } from "../data/constants";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-white pt-20 pb-0">
+    <section id="gallery" className="bg-[#FAF7F2] pt-20 pb-0">
       <div className="px-8 md:px-16 mb-12">
         <div className="max-w-7xl mx-auto flex items-baseline justify-between">
-          <h2 className="text-4xl md:text-5xl font-medium text-black" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-4xl md:text-5xl font-medium text-[#24211E]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Photo Gallery
           </h2>
-          <a href="#search" className="text-[10px] tracking-[0.2em] uppercase text-black/25 hover:text-black/60 transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <a href="#search" className="text-[10px] tracking-[0.2em] uppercase text-[#8A8075] hover:text-[#24211E] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>
             View All
           </a>
         </div>
@@ -35,8 +35,8 @@ export default function Gallery() {
             </div>
             <div className="overflow-hidden group cursor-pointer relative h-[150px] md:h-[295px]">
               <img src={IMGS.gallery[4]} alt="Exterior" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                <span className="text-white text-xs tracking-widest uppercase font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>+18 More</span>
+              <div className="absolute inset-0 flex items-center justify-center bg-[#1E1B18]/50">
+                <span className="text-[#FAF7F2] text-xs tracking-widest uppercase font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>+18 More</span>
               </div>
             </div>
           </div>

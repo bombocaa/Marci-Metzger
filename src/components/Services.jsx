@@ -24,7 +24,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-28 px-8 md:px-16 bg-white border-t border-black/5">
+    <section className="py-28 px-8 md:px-16 bg-[#FAF7F2] border-t border-[#E2DAD0]">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12">
           {items.map(({ src, alt, title, body }, i) => (
@@ -37,13 +37,13 @@ export default function Services() {
                 />
               </div>
               <h3
-                className="text-xl font-medium text-black mb-3 leading-snug"
+                className="text-xl font-medium text-[#24211E] mb-3 leading-snug"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {title}
               </h3>
               <p
-                className="text-black/40 text-sm leading-[1.75]"
+                className="text-[#5C544D] text-sm leading-[1.75]"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {body}

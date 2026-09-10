@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#24211E] overflow-x-hidden">
       <Nav />
       <main>
         <Hero />
